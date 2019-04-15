@@ -32,6 +32,8 @@ class InteractiveRecord
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert}")[0][0]
   end
   
-  
+  def table_name_for_insert
+    self.class.table_name
+  end
   
 end
