@@ -50,7 +50,7 @@ class InteractiveRecord
 
   def self.find_by(key)
     sql = "SELECT * FROM #{self.table_name} WHERE name = '?'"
-    DB[:conn].execute(sql, name)
+    DB[:conn].execute(sql, key)
   end
   
 end
